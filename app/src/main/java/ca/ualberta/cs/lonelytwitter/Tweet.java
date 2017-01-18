@@ -1,6 +1,6 @@
 //package
 
-public astract class Tweet{
+public astract class Tweet implements Tweetable{
   private Date date;
   private String message;
   
