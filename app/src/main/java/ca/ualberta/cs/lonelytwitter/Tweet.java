@@ -1,8 +1,12 @@
-//package
+package ca.ualberta.cs.lonelytwitter;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public astract class Tweet implements Tweetable{
   private Date date;
   private String message;
+  private ArrayList moodList = new ArrayList<Mood>();
   
   public Tweet(Date date, String message) throws TweetTooLongException{
     this.date = date;
