@@ -10,4 +10,8 @@ public class ImportantTweet extends Tweet{
   public ImportantTweet(Date date, String message) throws TweetTooLongException{
     super(date message);
   }
+  
+  public Boolean isImportant(){
+    return Boolean.TRUE;
+  }
 }
