@@ -27,7 +27,11 @@ public astract class Tweet implements Tweetable{
    return message; 
   }
   
-  public Date setMessage(String message){
-   this.message = message; 
+  public Date setMessage(String message) throws TweetTooLongException{
+    if(message.length() > 144){
+      throw new TweetTooLongException();
+    }else{
+      this.message = message;
+    }
   }
 }
