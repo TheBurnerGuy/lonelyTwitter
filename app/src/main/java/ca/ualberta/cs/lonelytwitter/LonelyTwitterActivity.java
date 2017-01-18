@@ -35,8 +35,16 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 		
 		try{
-			Tweet tweet = new Tweet("First tweet");
+			Tweet tweet = new NormalTweet("First tweet");
 			tweet.setMessage("kdjfdkjf");
+			ImportantTweet importantTweet = new ImportantTweet("very important");
+			importantTweet.getDate();
+			NormalTweet normalTweet = new NormalTweet("im normal");
+			
+			ArrayList<Tweet> arrayList = new ArrayList<Tweet>();
+			arrayList.add(tweet);
+			arrayList.add((Tweet)importantTweet);
+			arrayList.add(normalTweet);
 		} catch (TweetTooLongException e){
 			e.printStackTrace()
 		}
