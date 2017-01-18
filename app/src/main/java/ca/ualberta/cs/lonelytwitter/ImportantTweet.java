@@ -7,7 +7,7 @@ public class ImportantTweet extends Tweet{
     super(message);
   }
   
-  public ImportantTweet(Date date, String message) throws TweetTooLongException{
-    //yarr
+  public ImportantTweet(Date date, String detailMessage) throws TweetTooLongException{
+    super(detailMessage);
   }
 }
