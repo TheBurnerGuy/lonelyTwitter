@@ -15,9 +15,19 @@ public astract class Tweet implements Tweetable{
   
   public abstract Boolean isImportant();
   
+  public Date getDate(){
+   return this.date; 
+  }
+  
   public void setDate(Date date){
    this.date = date; 
   }
   
+  public String getMessage(){
+   return message; 
+  }
   
+  public Date setMessage(String message){
+   this.message = message; 
+  }
 }
