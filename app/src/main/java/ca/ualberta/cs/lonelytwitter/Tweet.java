@@ -6,11 +6,18 @@ public astract class Tweet{
   
   public Tweet(Date date, String message) throws TweetTooLongException{
     this.date = date;
-    this.message = message;
+    this.setMessage(message);
   }
   public Tweet(String message) throws TweetTooLongException{
-    this.message = message;
+    this.setMessage(message);
+    this.date = new Date();
   }
   
-  public abstract isImportant;
+  public abstract Boolean isImportant();
+  
+  public void setDate(Date date){
+   this.date = date; 
+  }
+  
+  
 }
