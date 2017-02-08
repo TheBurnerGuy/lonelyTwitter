@@ -63,12 +63,6 @@ public class ElasticsearchTweetController {
                 query = search_parameters[0];
             } else {
                 query = "{\n" +
-                        "   \"query\" : {\n" +
-                        "       \"term\" : { \"Message\" : \"" + search_parameters[0] + "\" }\n" +
-                        "   }\n" +
-                        "}";
-
-                /*      "{\n" +
                         "    \"query\": {\n" +
                         "        \"filtered\" : {\n" +
                         "            \"query\" : {\n" +
@@ -81,7 +75,13 @@ public class ElasticsearchTweetController {
                         "            }\n" +
                         "        }\n" +
                         "    }\n" +
-                        "}";;*/
+                        "}";
+
+                        /*"{\n" +
+                        "   \"query\" : {\n" +
+                        "       \"term\" : { \"Message\" : \"" + search_parameters[0] + "\" }\n" +
+                        "   }\n" +
+                        "}";*/
             }
 
             Search search = new Search.Builder(query) //replace search parameters with query (search_parameters[0])
