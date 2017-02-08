@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -71,7 +72,6 @@ public class LonelyTwitterActivity extends Activity {
 
 				ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
 				getTweetsTask.execute(bodyText.getText().toString());
-
 				try{
 					tweetList = getTweetsTask.get();
 				} catch (Exception e){
@@ -90,6 +90,15 @@ public class LonelyTwitterActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onStart();
 		//loadFromFile();
+
+		DateFormat dateFormat = DateFormat.getDateInstance();
+		try{
+			dateFormat.parse("2016-02-14T13:12:11");
+			bodyText.setText(dateFormat.format(dateFormat.parse("2016-02-14T13:12:11")));
+		}
+		catch(Exception e){
+			Log.i("Error", "Can't parse");
+		}
 
 		ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
 		getTweetsTask.execute("");

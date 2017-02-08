@@ -59,7 +59,7 @@ public class ElasticsearchTweetController {
 
                 // Build the query
             String query;
-            if(search_parameters[0]==""){
+            if(search_parameters[0].equals("")){
                 query = search_parameters[0];
             } else {
                 query = "{\n" +
